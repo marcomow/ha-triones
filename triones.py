@@ -70,6 +70,7 @@ class TrionesInstance:
                 await asyncio.sleep(1)
 
                 for char in self._device.services.characteristics.values():
+                    LOGGER.info(char.uuid)
                     if char.uuid in WRITE_CHARACTERISTIC_UUIDS:
                         self._write_uuid = char.uuid
                     if char.uuid in READ_CHARACTERISTIC_UUIDS:
